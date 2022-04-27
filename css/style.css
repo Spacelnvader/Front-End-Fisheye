@@ -1,5 +1,88 @@
 @import url("photographer.css");
 
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input,
+select {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img,
+video {
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
@@ -17,6 +100,11 @@ header {
 h1 {
     color: #901C1C;
     margin-right: 100px;
+    font-size: 2.625rem;
+}
+
+h2 {
+    color: #D3573C;
 }
 
 .logo {
@@ -39,6 +127,61 @@ h1 {
     flex-direction: column;
 }
 
+.photographer-article a {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation-name: fadeIn;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.photographer-article a div {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer-article a section {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer-article__name {
+    font-size: 36px;
+}
+
+.photographer-article__picture {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photographer-article__location {
+    color: #901C1C;
+    font-weight: 500;
+}
+
+.photographer-article__tagline {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.photographer-article__price {
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #525252;
+}
+
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
@@ -48,4 +191,3 @@ h1 {
     height: 200px;
     width: 200px;
 }
-
