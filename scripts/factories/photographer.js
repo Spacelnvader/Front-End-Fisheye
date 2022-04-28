@@ -9,7 +9,7 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );
         article.classList.add("photographer-article");
 
-        const url = `./profile.html?id=${id}`;
+        const url = `./photographer.html?id=${id}`;
         const link = document.createElement( 'a' );
         link.setAttribute('href', url);
 
