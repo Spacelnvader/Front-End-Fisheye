@@ -1,0 +1,11 @@
+{
+  "name": "FISHEYE",
+  "version": "1.0",
+  "description": "",
+  "scripts": {
+    "lint" : "eslint ./"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
+  }
+}
