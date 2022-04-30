@@ -56,5 +56,55 @@ function photographerFactory(data) {
 		article.appendChild(link);
 		return article;
 	}
-	return { name, picture, getUserCardDOM };
+	function getUserSectionDOM() {
+		const profile = document.createDocumentFragment();
+
+		// Build profile picture element
+		const img = document.createElement( "img" );
+		img.classList.add("photographer-section__picture");
+		img.setAttribute("src", picture);
+		img.setAttribute("alt", name);
+
+		const profileDiv = document.createElement("div");
+		profileDiv.classList.add("photographer-section__profile");
+
+		// Build title element with Name
+		const h2 = document.createElement( "h2" );
+		h2.textContent = name;
+		h2.classList.add("photographer-section__profile-name");
+		h2.setAttribute("tabindex", "0");
+
+		const detailsDiv = document.createElement("div");
+		detailsDiv.classList.add("photographer-section__profile-details");
+		detailsDiv.setAttribute("tabindex", "0");
+
+		// Build City, Country element
+		const locationSpan = document.createElement( "span" );
+		locationSpan.textContent = city + ", " + country;
+		locationSpan.classList.add("photographer-section__profile-details-location");
+
+		// Build tagline
+		const taglineSpan = document.createElement( "span" );
+		taglineSpan.textContent = tagline;
+		taglineSpan.classList.add("photographer-section__profile-details-tagline");
+
+		const contactButton = document.createElement("button");
+		contactButton.textContent = "Contactez-moi";
+		contactButton.classList.add("contact_button");
+		contactButton.setAttribute("id","contact-me_button");
+		contactButton.setAttribute("aria-labelledby", "contact-me_button");
+		//contactButton.setAttribute('onclick', "displayModal()");
+
+		detailsDiv.appendChild(locationSpan);
+		detailsDiv.appendChild(taglineSpan);
+		profileDiv.appendChild(h2);
+		profileDiv.appendChild(detailsDiv);
+		profile.appendChild(profileDiv);
+		//profile.appendChild(priceSpan);
+		profile.appendChild(contactButton);
+		profile.appendChild(img);
+
+		return profile;
+	}
+	return { name, picture, getUserCardDOM, getUserSectionDOM };
 }

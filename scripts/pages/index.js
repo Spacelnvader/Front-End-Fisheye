@@ -2,7 +2,7 @@ async function getPhotographers() {
 	// Penser à remplacer par les données récupérées dans le json
 	return fetch("../data/photographers.json")
 		.then(res => res.json());
-        
+
 }
 
 async function displayData(photographers) {
@@ -20,6 +20,5 @@ async function init() {
 	const { photographers } = await getPhotographers();
 	displayData(photographers);
 }
-    
+
 init();
-    
