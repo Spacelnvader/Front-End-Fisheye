@@ -1,2 +1,2 @@
-import { photographerFactory } from "../factories/photographer";
+// import { photographerFactory } from "../factories/photographer";
 
