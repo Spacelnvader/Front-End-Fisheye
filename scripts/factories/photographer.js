@@ -1,4 +1,4 @@
-function photographerFactory(data) {
+export function photographerFactory(data) {
 	const { name, id, city, country, tagline, price, portrait } = data;
 
     
@@ -16,7 +16,7 @@ function photographerFactory(data) {
 		const mainContainer = document.createElement("div");
 		mainContainer.setAttribute("tabindex", "0");
 
-    
+		// Build profile picture element
 		const img = document.createElement( "img" );
 		img.classList.add("photographer-article__picture");
 		img.setAttribute("src", picture);
