@@ -1,27 +1,37 @@
-function photographerFactory(data) {
+/**
+ * Factory function to create a photographer article or section depending on if it's index.html or profile.html
+ * @param {object} data 
+ * @returns {object}
+ */
+export function photographerFactory(data) {
 	const { name, id, city, country, tagline, price, portrait } = data;
 
-    
-	const picture = `assets/photographers/portrait/${portrait}`;
+	// Remove .jpg extension for sourceset
+	const portraitName = portrait.slice(0, -4);
+	const srcSetLink = `./assets/photographers/${portraitName}-xxlight.jpg`;
+	const picture = `./assets/photographers/${portrait}`;
 
 	function getUserCardDOM() {
 		// Create new article
 		const article = document.createElement( "article" );
 		article.classList.add("photographer-article");
 
-		const url = `./photographer.html?id=${id}`;
+		const url = `./profile.html?id=${id}`;
 		const link = document.createElement( "a" );
 		link.setAttribute("href", url);
 
 		const mainContainer = document.createElement("div");
 		mainContainer.setAttribute("tabindex", "0");
+        
 
 		// Build profile picture element
 		const img = document.createElement( "img" );
-		img.classList.add("photographer-article__picture");
-		img.setAttribute("src", picture);
+		img.classList.add("photographer-article__picture", "buffer");
+		img.setAttribute("src", srcSetLink);
+		img.setAttribute("srcset", `${srcSetLink} w2000, ${picture} w2500`);
 		img.setAttribute("alt", name);
 
+		// Build title element with Name
 		const h2 = document.createElement( "h2" );
 		h2.textContent = name;
 		h2.classList.add("photographer-article__name");
@@ -31,23 +41,25 @@ function photographerFactory(data) {
 		const detailsSection = document.createElement("section");
 		detailsSection.setAttribute("tabindex", "0");
 
-		const location = document.createElement( "h3" );
-		location.textContent = city + ", " + country;
-		location.classList.add("photographer-article__location");
+		// Build City, Country element
+		const locationHeading = document.createElement( "h3" );
+		locationHeading.textContent = city + ", " + country;
+		locationHeading.classList.add("photographer-article__location");
 
+		// Build tagline
+		const taglineSpan = document.createElement( "span" );
+		taglineSpan.textContent = tagline;
+		taglineSpan.classList.add("photographer-article__tagline");
 
-		const tag = document.createElement( "span" );
-		tag.textContent = tagline;
-		tag.classList.add("photographer-article__tagline");
-
-		const honorary = document.createElement( "span" );
-		honorary.textContent = price + "€/jour";
-		honorary.classList.add("photographer-article__price");
+		// Build price
+		const priceSpan = document.createElement( "span" );
+		priceSpan.textContent = price + "€/jour";
+		priceSpan.classList.add("photographer-article__price");
 
 		//Append elements to article
-		detailsSection.appendChild(location);
-		detailsSection.appendChild(tag);
-		detailsSection.appendChild(honorary);
+		detailsSection.appendChild(locationHeading);
+		detailsSection.appendChild(taglineSpan);
+		detailsSection.appendChild(priceSpan);
 		mainContainer.appendChild(img);
 		mainContainer.appendChild(h2);
 		link.appendChild(mainContainer);
@@ -56,6 +68,7 @@ function photographerFactory(data) {
 		article.appendChild(link);
 		return article;
 	}
+
 	function getUserSectionDOM() {
 		const profile = document.createDocumentFragment();
 
@@ -106,5 +119,6 @@ function photographerFactory(data) {
 
 		return profile;
 	}
-	return { name, picture, getUserCardDOM, getUserSectionDOM };
+
+	return {name, picture, getUserCardDOM, getUserSectionDOM };
 }

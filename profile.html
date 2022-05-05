@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/icons/fisheye_favicon.png"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+    <title>Fisheye - photographe</title>
+    <script src="https://kit.fontawesome.com/52b9d34509.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" tabindex="0" id="back-to-home">
+        <img src="assets/images/logo.png" id="logo"  alt="Fisheye Home page"/>
+      </a>
+    </header>
+    <main id="main">
+      <section id="photographer-section"></section>
+      <div id="sort">
+        <label id="listbox-label" for="listbox-container">Trier par
+          <div id="listbox-container" role="button" aria-haspopup="listbox" tabindex="0" aria-expanded="false"> 
+            <span id="listbox-current-option">Popularité</span>
+            <div role="listbox" id="listbox" tabindex="-1" aria-labelledby="listbox-label" aria-activedescendant="listbox-popularity"> 
+              <div class="listbox-option" role="option" data-sort="popularity" tabindex="-1" id="listbox-popularity">Popularité</div> 
+              <div class="listbox-option" role="option" data-sort="date" tabindex="-1" id="listbox-date">Date</div>
+              <div class="listbox-option" role="option" data-sort="title" tabindex="-1" id="listbox-title">Titre</div>
+            </div>
+          </div>
+        </label> 
+      </div>
+      <section id="galery-section"></section>
+    </main>
+    <template id="template_lightbox">
+      <dialog id="lightbox_modal" tabindex="0" aria-hidden="false">
+          <div class="lightbox_modal_arrow" id="left-arrow" data-directioninput="previous" tabindex="0">&lt;</div>
+          <div id="lightbox_modal_main" >
+            <figure tabindex="0" id="lightbox_modal_main_media">
+              <figcaption tabindex="0" id="lightbox_modal_title"></figcaption>
+            </figure>
+          </div>
+          <div class="lightbox_modal_arrow" id="right-arrow" data-directioninput="next" tabindex="0">&gt;</div>
+          <img id="lightbox_modal_close_button" src="assets/icons/close.svg" alt="lightbox close button" tabindex="0"></img>
+      </dialog>
+  </template>
+    <div id="contact_modal" tabindex="-1">
+      <div class="modal-body">
+        <header>
+          <h2 id="contact_modal_title" tabindex="0">Contactez-moi</h2>
+        </header>
+        <form id="contact-form">
+            <label for="contact-first-name">Prénom</label>
+            <input type="text" minlength='2' maxlength="20" id="contact-first-name"/>
+            <label for="contact-last-name">Nom</label>
+            <input type="text" id="contact-last-name" minlength='2' maxlength="20"/>
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email"/>
+            <label for="contact-message"minlength='2' maxlength="250">Votre message</label>
+            <input type="text" id="contact-message"/>
+          <button id="submit-form_button">Envoyer</button>
+        </form>
+        <svg id="contact-modal_close-button" tabindex="0" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#901C1C"/>
+        </svg>
+    </div>
+  </div>
+    <script defer src="./scripts/pages/profile.js" type="module"></script>
+  </body>
+</html>
