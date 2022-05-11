@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { addFormListener, removeFormListener } from "./contact_listeners.js";
-import { getProfile, getPhotographerId } from "../../components/query.js";
+import { getProfile, getPhotographerId } from "../../queries/query.js";
 
 /**
  * Displays contact modal and sets focus on it. Sets photographer name to contact modal. Adds form Event Listener

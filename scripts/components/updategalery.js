@@ -1,4 +1,4 @@
-import { getPhotographerId, getGalery, setSessionGalery } from "./query.js";
+import { getPhotographerId, getGalery, setSessionGalery } from "../queries/query.js";
 import { displayGalery } from "./display.js";
 import { addDynamicDOMListeners } from "./events.js";
 import { displayDOMCheckboxState } from "./likes.js";

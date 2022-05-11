@@ -1,4 +1,4 @@
-import { getGalery, getPhotographerId, supportsTemplates } from "../../components/query.js";
+import { getGalery, getPhotographerId, supportsTemplates } from "../../queries/query.js";
 import { addLightboxListeners, removeLightboxListeners } from "./lightbox_listeners.js";
 import { appendLightboxMedia } from "./lightbox_media.js";
 

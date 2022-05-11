@@ -1,4 +1,4 @@
-import { getProfile } from "./query.js";
+import { getProfile } from "../queries/query.js";
 
 /**
  * Creates and appends a widget displaying total likes and fees for a photographer

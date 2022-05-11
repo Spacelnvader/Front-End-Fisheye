@@ -1,4 +1,4 @@
-import {setSessionGalery} from "./query.js";
+import {setSessionGalery} from "../queries/query.js";
 import {updateWidget} from "./widget.js";
 
 let allCheckboxStates = [];

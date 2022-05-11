@@ -1,5 +1,5 @@
 import { displayPhotographers } from "../components/display.js";
-import { getPhotographers } from "../components/query.js";
+import { getPhotographers } from "../queries/query.js";
 
 
 /**

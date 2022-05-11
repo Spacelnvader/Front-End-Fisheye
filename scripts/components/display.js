@@ -1,6 +1,6 @@
 import { galeryFactory } from "../factories/galery.js";
 import { photographerFactory } from "../factories/photographer.js";
-import { getProfile } from "./query.js";
+import { getProfile } from "../queries/query.js";
 
 /**
  * Appends photographers articles in the in index.html DOM
