@@ -37,10 +37,10 @@ export function submitContactForm(e) {
 	const emailInputDOM = document.getElementById("contact-email");
 	const messageInputDOM = document.getElementById("contact-message");
     
-	if(firstNameInputDOM.value !="" 
-    && lastNameInputDOM.value != ""
-    && emailInputDOM.value != ""
-    && messageInputDOM.value != "") {
+	if(firstNameInputDOM.value.trim() !="" 
+    && lastNameInputDOM.value.trim() != ""
+    && emailInputDOM.value.trim() != ""
+    && messageInputDOM.value.trim() != "") {
 		console.log(`%cBonjour %c${firstNameInputDOM.value} ${lastNameInputDOM.value},\n%cVotre message a bien été envoyé au photographe.\nVeuillez retrouver votre message ci-dessous :\n%c\"${messageInputDOM.value}\"\n%cUne copie de ce message vous sera envoyée à\n%c${emailInputDOM.value}`,
 			"line-height: 3em; font-size: 14px;","color: #D3573C; font-style: italic; font-weight: bold; line-height: 3em; font-size: 14px;", "color: #FFF", "color: #D3573C; font-size: 14px; font-style: italic; line-height: 3em;", "color: #FFF", "color: black; font-style: italic; font-weight: bold; background: white; font-size: 14px; line-height: 3em; border: 1px solid white;");
 		document.forms["contact-form"].reset();
