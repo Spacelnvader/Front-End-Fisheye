@@ -1,6 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /**
  * Instanciate intersection observer on galery articles to display medias when they enter viewport. 
+ * cette fonction compare la position de l'élement par rapport à la root et ajoutera un buffer si c'est le cas
  */
 export function addObserver() {
 	const articles = document.querySelectorAll(".media-article");
