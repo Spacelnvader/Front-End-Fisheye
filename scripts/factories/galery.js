@@ -73,7 +73,7 @@ export function galeryFactory(data) {
 		const likeInput = document.createElement("input");
 		likeInput.classList.add("media-article_details_like-module_input");
 		likeInput.setAttribute("type", "checkbox");
-		likeInput.setAttribute("aria-label", "like checkbox");
+		likeInput.setAttribute("aria-label", "ajouter un j'aime à la photo");
 		likeInput.setAttribute("id", id);
 		if (getCheckboxState() != null ){
 			const checkBoxState = getCheckboxState().split(",");
