@@ -32,6 +32,7 @@ export function closeLightboxModal() {
 
 /**
  * Appends the following media to the Lightbox.
+ * Grace au Proxy, on créé un intermédiaire pour l'objet media à suivre, on prend notre target et on le remplace par le proxy selon la direction choisie.
  * @param {string} direction 
  */
 export async function getFollowingMedia(direction) {

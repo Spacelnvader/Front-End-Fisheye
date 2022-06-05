@@ -59,13 +59,14 @@ function addListboxListeners() {
 
 /**
  * Adds Event Listeners to media articles (images or video);
+ * on déclenche la fonction openlightbox au clic souris ou clavier sur le focus du média
  */
 export async function addMediaListeners() {
 	const mediaDOM = document.querySelectorAll(".media-article_media");
 
 	mediaDOM.forEach((media) => {
         
-		media.addEventListener("click", function(e) {
+		media.addEventListener("click", function() {
 			const mediaId = parseInt(this.dataset.id);
 			openLightboxModal(mediaId);
 		});
